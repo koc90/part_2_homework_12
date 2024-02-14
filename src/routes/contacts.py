@@ -61,7 +61,7 @@ async def display_choosen_contact_by_id(
     return contact
 
 
-@router.post("/", response_model=ContactResponse)
+@router.post("/", response_model=ContactResponse, status_code=status.HTTP_201_CREATED)
 async def add_new_contact(
     body: ContactBase,
     db: Session = Depends(get_db),
